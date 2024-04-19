@@ -1,7 +1,3 @@
-/**
- * Read FAQs section on the left for more information on how to use the editor
-**/
-// DO NOT CHANGE FUNCTION NAME
 
 //Submission  -> https://devtools.tech/questions/implement-a-credit-card-masker-or-klarna-frontend-interview-question-or-javascript/submissions/BUPT4GRQpmrIFMx6ZAfH?ref=item-card 
 
