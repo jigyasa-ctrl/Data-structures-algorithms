@@ -47,7 +47,7 @@ const taskList = [task(3000), task(5000), task(1000)]
 
 
 
-myPromiseAll(taskList).then(val => console.log("result:" val)).catch(err => console.log(err))
+myPromiseAll(taskList).then(val => console.log("result: "+ val)).catch(err => console.log(err))
 
 // result: [3000,5000,1000]
 
@@ -70,6 +70,6 @@ return new Promise(function (resolve, reject) {
 
 const taskList = [task(3000), task(5000), task(1000)]
 
-myPromiseAll(taskList).then(val => console.log("result:" val)).catch(err => console.log(err))
+myPromiseAll(taskList).then(val => console.log("result: "+ val)).catch(err => console.log(err))
 
 // "Rejected"
