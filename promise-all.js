@@ -30,6 +30,26 @@ const myPromiseAll = function (taskList) {
   })
 }
 
+// OR similar to any with some updates ->
+
+    const all = function(tasks){
+        const promiseCompleted = new Array(tasks.length)
+        let counter = 0;
+
+        return new Promise((resolve, reject) => {
+            tasks.forEach((promise)=> {
+                promise.then((value) => {
+                    promiseCompleted[counter] = value
+                    counter = counter + 1
+                    if(counter === tasks.length){
+                        resolve(promiseCompleted)
+                    }
+                }).catch((error) => reject(error))
+            })
+        })
+
+    }
+
 
 
 =============================================
