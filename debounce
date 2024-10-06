@@ -1,0 +1,33 @@
+
+// implement debounce() with leading & trailing option
+
+/**
+ * @param {(...args: any[]) => any} func
+ * @param {number} wait
+ * @param {boolean} option.leading
+ * @param {boolean} option.trailing
+ * @returns {(...args: any[]) => any}
+ */
+
+function debounce(func, wait, option = {leading: false, trailing: true}) {
+  // your code here
+  let timer = null;
+  return function(args){
+    let isInvoked = false
+    if(timer === null && option.leading){
+      func.call(this, ...args)
+      isInvoked = true
+    }
+    clearTimeout(timer);
+
+    timer = setTimeout(()=> {
+      if(!isInvoked && option.trailing){
+      func.apply(this, ...args);
+      }
+      timer = null
+
+    }, wait)
+  }
+}
+
+
