@@ -1,5 +1,7 @@
 // Currying question
 
+// Currying is a technique in proramming where a function with multiple arguments is transformed into a sequence of function with a single argument.o a function with
+
 function finalString(...args){
   
   const parts = args.filter(value => value!==undefined && value!==null)

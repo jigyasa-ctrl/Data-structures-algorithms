@@ -1,9 +1,13 @@
-"use strict";
-
+// "use strict";
+let arraoe = ()=>{
+    console.log(this)
+}
+arraoe() // {}
 
 function abc() {
     console.log(this)
 }
+// abc()
 var a = 6;
 
 var obj = {
@@ -24,16 +28,16 @@ var obj = {
     }
 }
 
- // obj.x()
+//  obj.x()
 
 var obj = {
     a: 3,
     x: () => {
-        console.log(this) // points to window
+        console.log(this) // points to window in browser, in node js logs {} becz top level this in node is {}
     }
 }
 
- // obj.x()
+//  obj.x()
 
 var obj = {
     a: 3,
@@ -46,7 +50,7 @@ var obj = {
     }
 }
 
- // obj.x()
+//  obj.x()
 
 
 var obj = {
@@ -60,5 +64,11 @@ var obj = {
     }
 }
 
+// normal function - this depends on call site
 
-// obj.x()
+// here x has this = obj
+// arow function -> this depends on where the funciton is created
+//arraow function takes this from where it is defained , it is defined in x where this = obj
+
+
+// obj.x()()
