@@ -34,3 +34,21 @@ function Counter() {
 }
 
 export default Counter;
+
+
+useEffect(() => {
+
+})
+useEffect(() => {
+    
+}, [])
+
+useEffect(() => {
+    
+}, [abc])
+useEffect(() => {
+
+    return () =>{
+
+    }    
+}, [abc])
