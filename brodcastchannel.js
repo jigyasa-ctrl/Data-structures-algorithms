@@ -1,4 +1,13 @@
 import React, { useState, useEffect } from "react";
+// Brodcast channel APi is like an event listener it listens in different tabs and updates value in all tabs for the subscribed event. -> 
+// for example : use cases
+
+// Multi-tab Login/Logout Sync
+// Cart Sync in E-commerce
+// Live Notifications
+
+/// Limitation: It only works on same-origin pages
+
 
 function Counter() {
   const [count, setCount] = useState(0);
