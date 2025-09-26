@@ -22,3 +22,5 @@ const fetchPollyfill = function(url) {
     })
 }
 
+await fetchPollyfill("https://jsonplaceholder.typicode.com/todos/1")
+
