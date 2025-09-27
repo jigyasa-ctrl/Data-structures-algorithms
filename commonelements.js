@@ -23,4 +23,4 @@ function mostCommonElements(numbers, k) {
     return result.splice(0, k)
   }
 
-  console.log(mostCommonElements([7,7,7,8,8,9,9,9], 3))
+  console.log(mostCommonElements([7,7,7,8,8,9,9,9], 2))
