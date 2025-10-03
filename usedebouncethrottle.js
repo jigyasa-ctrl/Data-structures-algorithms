@@ -5,7 +5,6 @@ export default function useThrottle(func, delay = 200) {
   const throttled = useCallback(
     (...args) => {
       if (Date.now() - lastExecuted.current >= delay) {
-        console.log(args);
         func(...args);
         lastExecuted.current = Date.now();
       }
