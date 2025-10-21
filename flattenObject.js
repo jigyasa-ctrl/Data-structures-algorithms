@@ -57,3 +57,44 @@ const obj = {
   //   "skills.frontend.css": true,
   //   "skills.backend.node": true
   // }
+
+  /// another variant with array
+
+  const nested = {
+    A: "12",
+    B: 23,
+    C: {
+      P: 23,
+      O: {
+         L: 56
+      },
+      Q: [1, 2]
+     }   
+  };
+  
+  let final = {}
+  
+  function flatten(obj, former=""){
+   const arr = Object.entries(obj)
+   for(const [key, value] of arr){
+       if(typeof value == "object" && !Array.isArray(value)){
+           let keyVal = former ? former + "." + key : key
+           flatten(value, keyVal)
+       } else if(Array.isArray(value)) {
+           value.forEach((d, index) => {
+               let keyVal = former + "." + key + "."+ index
+               final[keyVal] = d
+           })
+           
+       } else {
+           let keyVal = former ? former + "." + key : key
+           final[keyVal] = value
+       }
+   }
+   
+      
+      
+  }
+  
+  flatten(nested)
+  console.log(final)
