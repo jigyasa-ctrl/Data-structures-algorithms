@@ -21,6 +21,33 @@ function cloneDeep(data) {
 
 cloneDeep({[Symbol()]:'bfe'})
 
+// simpler -> but has issues
+// =============================================
+
+abc = {
+  name: "jigyasa",
+  age: 27,
+  address: {
+      house: 44,
+      landmark: "city"
+  }
+}
+function cloneDeep (obj) {
+  if(typeof obj !== "object") return obj
+  const final = Array.isArray(obj) ? [] : {}
+  const data = Object.entries(obj)
+  for(let [key, value]  of data){
+      final[key] = cloneDeep(value)
+  }
+  return final
+}
+
+let newobj = cloneDeep(abc)
+newobj.age = 67;
+newobj.address.landmark = "tejaswini classes";
+console.log(newobj);
+console.log(abc)
+
 
 
 
