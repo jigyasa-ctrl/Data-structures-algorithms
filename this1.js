@@ -24,6 +24,23 @@ const obj = {
   }
 }
 
+// console.log(obj.a) 
+// obj.b() 
+// (obj.b)() 
+// const b = obj.b
+// b() 
+// obj.b.apply({a: 2}) 
+// obj.c()
+// obj.d() 
+// ;(obj.d)() 
+// obj.d.apply({a:2}) 
+// obj.e() 
+// ;(obj.e)() 
+// obj.e.call({a:2}) 
+// obj.f()() 
+// ;(obj.f())() 
+// obj.f().call({a:2})  
+
 console.log(obj.a) // 1
 obj.b() // 1
 ;(obj.b)() // 1
