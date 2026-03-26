@@ -7,6 +7,8 @@ const obj = {
       }
     }
   };
+
+  
   
   const get = function(obj, str) {
       const arr = str.split("."); // [a,b,c,0]
