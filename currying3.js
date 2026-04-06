@@ -3,16 +3,26 @@
 // add(1)(2)(3).value() = 6; 
 // add(1)(2).value() + 3 = 6;
 
+// valueOf() is used when JS tries to coerce an object into a primitive (like in +, ==, or console.log in some cases).
+// Valeof should be a function which is called automatically by JS on coersion
 
-function add(...args) {
-    let total = [...args];
-    return function abc(...args2) {
-        total.push(...args2)
-        abc.value = function() {
-            return total.reduce((acc, curr) => acc + curr, 0 )
+let final = [];
+function addedSum(func){
+    return function added(...args){
+        final.push(...args)
+        added.value = function() {
+            return func(...final)
         }
-        return abc
+        added.valueOf = added.value
+        return added
     }
 }
 
-console.log(add(1)(2).value())
+const sum = function(...args) {
+    
+    return [...args].reduce((acc, curr) => acc + curr, 0)
+    
+}
+
+const add = addedSum(sum)
+console.log(add(1, 2)(3) + 6) // 12
