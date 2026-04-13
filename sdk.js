@@ -1,3 +1,5 @@
+// Asked in Medibuddy SDE - 3 role.
+
 const platforms = {
     google: true,
     facebook: false

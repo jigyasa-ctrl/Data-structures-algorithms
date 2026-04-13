@@ -26,22 +26,22 @@ const a = {
   
   
   
-  // async function chart(value){
-  // console.log("start", value)
-  // await console.log("middle", value)
-  // console.log("end",value)
-  // }
+  async function chart(value){
+  console.log("start", value)
+  await console.log("middle", value)
+  console.log("end",value)
+  }
   
-  // chart("first")
-  // chart("second")
+  chart("first")
+  chart("second")
   
   
-  // // start first
-  // // start second
-  
-  // // end first
-  // // middle second
-  // // end second
+  // start first
+  // middle first
+  // start second
+  // middle second
+  // end first
+  // end second
   
   
   console.log(1);
