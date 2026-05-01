@@ -7,19 +7,19 @@ export default function useFetch(url, options={}, dependencies=[]){
         if(!url) return
         setLoading(true)
         setError(null)
+        const controller = new AbortController()
         try{
-            const res = await fetch(url, options)
+            const res = await fetch(url, { ...options, signal: controller.signal })
             if(!res.ok){
                 throw new Error(`Something went wrong! error: ${res.status}`)
             } 
             const json = await res.json()
             setData(json)
         } catch(err) {
-            setError(error.message || "Something went wrong")
+            setError(err.message || "Something went wrong")
         } finally{
-            setLoading(false)
+            setLoading(false)        
         }
-        
     }, [url, JSON.stringify(options)])
     useEffect(() => {
         fetchData()
