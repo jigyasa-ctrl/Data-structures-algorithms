@@ -7,8 +7,6 @@
 function customReduce(callback, initialValue) {
     // DO NOT REMOVE
     'use strict';
-    initialValue = initialValue ?? 0 // when initial value is not provided set it to 0
-  
     // write your solution below
   
     if (typeof callback !== "function") { // when callback is not a function
@@ -22,7 +20,7 @@ function customReduce(callback, initialValue) {
     }
     
   
-    let accumulator = initialValue;
+    let accumulator =  initialValue ?? 0; // when initial value is not provided set it to 0
     let context = this;
   
     for (let i = 0; i < context.length; i++){
