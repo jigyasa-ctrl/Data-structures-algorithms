@@ -17,3 +17,23 @@ function throttle(func, delay) {
   }
 
 }
+
+// with last ran
+
+function throttle(func, delay) {
+  let timer;
+  let lastRan = 0;
+  return function(...args) {
+      let now = Date.now()
+      let timeSpent = now - lastRan
+      if(timeSpent >= delay){
+         func.call(this, ...args)
+         clearTimeout(timer);
+         timer = setTimeout(() =>{
+          lastRan = Date.now()
+         }, delay - timespent)
+      }
+      
+  }
+  
+}
