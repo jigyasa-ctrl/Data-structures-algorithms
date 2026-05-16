@@ -12,17 +12,18 @@
 function debounce(func, wait, option = {leading: false, trailing: true}) {
   // your code here
   let timer = null;
-  return function(args){
-    let isInvoked = false
-    if(timer === null && option.leading){
-      func.call(this, ...args)
-      isInvoked = true
-    }
+  return function(...args){
+    const shouldCallLeading = option.leading && timer === null;
+
     clearTimeout(timer);
 
+    if(shouldCallLeading){
+      func.apply(this, args)
+    }
+
     timer = setTimeout(()=> {
-      if(!isInvoked && option.trailing){
-      func.apply(this, ...args);
+      if(!shouldCallLeading && option.trailing){
+      func.apply(this, args);
       }
       timer = null
 
