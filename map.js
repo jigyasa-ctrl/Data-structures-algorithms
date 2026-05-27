@@ -20,7 +20,7 @@ Array.prototype.MyMap = function(callback, thisArg){ // callback is the function
     
     let finalResult = []
     let array = this;
-    for(let i=0; i< context.length; i++){
+    for(let i=0; i< array.length; i++){
         if(i in context){
              let curr = array[i]
         const result = callback.call(thisArg, curr, i, array) // call the callback function with the current element, index and array
