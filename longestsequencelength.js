@@ -22,6 +22,30 @@ for(let i=1; i<=arr.length-1; i++){
 return largestCount;
 }
 
+// more testcases covered -
+//  appraoch -> start checking if smaller number exist ? then ignore, else startcounting till curr + 1 exisits.
+var longestConsecutive = function(nums) {
+    const set = new Set(nums);
+    let longest = 0;
+
+    for (let num of set) {
+        // start only from first element of sequence
+        if (!set.has(num - 1)) {
+            let current = num;
+            let count = 1;
+
+            while (set.has(current + 1)) {
+                current++;
+                count++;
+            }
+
+            longest = Math.max(longest, count);
+        }
+    }
+
+    return longest;
+};
+
 console.log(largestConsecutiveArrCount(array)) // 6
 
 
